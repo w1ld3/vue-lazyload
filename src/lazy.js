@@ -109,9 +109,8 @@ export default function (Vue) {
         this.update(el, binding)
         return Vue.nextTick(this.lazyLoadHandler)
       }
-
       let { src, loading, error } = this._valueFormatter(binding.value)
-
+      
       Vue.nextTick(() => {
         src = getBestSelectionFromSrcset(el, this.options.scale) || src
         this._observer && this._observer.observe(el)
